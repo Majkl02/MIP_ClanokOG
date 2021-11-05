@@ -13,17 +13,18 @@
 \usepackage{cite}
 %\usepackage{times}
 
-\pagestyle{headings}
+%\pagestyle{headings}
 
-\title{Názov\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2015/16, vedenie: Meno Priezvisko}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{Softvéry na detekciu potencionálnych rizík 
+implementované v automobiloch\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: PhD. Ing. Fedor Lehocki  }} % meno a priezvisko vyučujúceho na cvičeniach
 
-\author{Meno Priezvisko\\[2pt]
+\author{Michal Januška\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-	{\small \texttt{...@stuba.sk}}
+	{\small \texttt{xjanuskam@stuba.sk}}
 	}
 
-\date{\small 30. september 2015} % upravte
+\date{\small 5.10. 2021} % upravte
 
 
 
@@ -32,23 +33,18 @@
 \maketitle
 
 \begin{abstract}
-\ldots
+Žijeme v dobe, kde už je vlastníctvo automobilu komoditou. Tieto stroje sú nám veľkou výpomocou či už pri výkone práce alebo pri voľnočasových aktivitách. Aj keď sa na prvý pohľad môže zdať, že automobily so sebou prinášajú samé výhody, nastávajú aj také situácie kedy sa toto vozidlo môže vymknúť kontrole vodiča a môže dôjsť až k smrteľným nehodám alebo situáciam. V takýchto situáciach nastupujú rôzne zabudované softvéry, ktoré majú za úlohu včas detekovať hroziace riziko a vykonať všetko pre jeho zabránenie s dôrazom na čo najmenšie ohrozenie posádky automobilu ale aj vonkajšieho prostredia. Tieto softvéry fungujú na báze umelej inteligencie a machine learningu. V tejto práci sa venujem predstaveniu týchto softvérov z rôznych aspektov a ich funkcionalite ktorá spočíva v modelovaní postupov riešení pri rizikových situáciach.
 \end{abstract}
 
 
 
 \section{Úvod}
 
-Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
-
-Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
-Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
-Záverečné poznámky prináša časť~\ref{zaver}.
+Zameranie tejto práce je pomerne široké, preto bude pozostávať s viacerych častí. Hneď v sekcii~\ref{problematika} si predstavíme riziká ktoré môžu nastať pri vedení automobilu alebo aj pri automobile ktorý nie je práve v pohybe. V nasledujúcej sekcii~\ref{predstavenie} si predstavíme softvéry a pomocné komponenty ktoré majú za úlohu sa s týmito situáciami vysporiadať a urobíme ich podrobný rozbor. Veľa z týchto komponentov ešte momentalne nie je implementovaných v bežných automobiloch ale vývojári sa ich snažia dokončiť čo najrýchlejšie a následne vyslať na trh. Budeme sa zaoberať vytváraním modelov daných situácií a ukážeme si ich priebeh od začiatku až do konca. V tejto práci nebudem poukazovať len na výhody týchto softvérov a zariadení, ale budem uvádzať aj nevýhody a ich potencionálne odstránenie. Rozbor jednotlivých softvérov a komponentov bude obohatený o rôzne grafy a vývojové diagramy, pre lepšie pochopenie danej problematiky. Celá práca bude zhrnutá v sekcii Záver, kde sa podelím o svoj osobný názor a urobím jej kompletný výstup.
 
 
 
-\section{Nejaká časť} \label{nejaka}
+\section{Problematika} \label{problematika}
 
 Z obr.~\ref{f:rozhod} je všetko jasné. 
 
@@ -62,7 +58,7 @@ Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný pláva
 
 
 
-\section{Iná časť} \label{ina}
+\section{Predstavenie softvérov a komponentov} \label{predstavenie}
 
 Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
 

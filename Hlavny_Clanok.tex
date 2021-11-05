@@ -33,39 +33,28 @@ implementované v automobiloch\thanks{Semestrálny projekt v predmete Metódy in
 \maketitle
 
 \begin{abstract}
-Žijeme v dobe, kde už je vlastníctvo automobilu komoditou. Tieto stroje sú nám veľkou výpomocou či už pri výkone práce alebo pri voľnočasových aktivitách. Aj keď sa na prvý pohľad môže zdať, že automobily so sebou prinášajú samé výhody, nastávajú aj také situácie kedy sa toto vozidlo môže vymknúť kontrole vodiča a môže dôjsť až k smrteľným nehodám alebo situáciam. V takýchto situáciach nastupujú rôzne zabudované softvéry, ktoré majú za úlohu včas detekovať hroziace riziko a vykonať všetko pre jeho zabránenie s dôrazom na čo najmenšie ohrozenie posádky automobilu ale aj vonkajšieho prostredia. Tieto softvéry fungujú na báze umelej inteligencie a machine learningu. V tejto práci sa venujem predstaveniu týchto softvérov z rôznych aspektov a ich funkcionalite ktorá spočíva v modelovaní postupov riešení pri rizikových situáciach.
+Žijeme v dobe, kde už je vlastníctvo automobilu komoditou. Tieto stroje sú nám veľkou výpomocou či už pri výkone práce alebo pri voľnočasových aktivitách. Aj keď sa na prvý pohľad môže zdať, že automobily so sebou prinášajú samé výhody, nastávajú aj také situácie kedy sa toto vozidlo môže vymknúť kontrole vodiča a môže dôjsť  k veľmi nebezpečným situáciam alebo až k smrteľným nehodám. V takýchto situáciach nastupujú rôzne zabudované softvéry, ktoré majú za úlohu včas detekovať hroziace riziko a vykonať všetko pre jeho zabránenie s dôrazom na čo najmenšie ohrozenie posádky automobilu ale aj vonkajšieho prostredia. Tieto softvéry fungujú na báze umelej inteligencie a machine learningu. V tejto práci sa venujem predstaveniu týchto softvérov z rôznych aspektov a ich funkcionalite ktorá spočíva v modelovaní postupov riešení pri rizikových situáciach.
 \end{abstract}
 
 
 
-\section{Úvod}
+\section{Úvod}\label{uvod}
 
-Zameranie tejto práce je pomerne široké, preto bude pozostávať s viacerych častí. Hneď v sekcii~\ref{problematika} si predstavíme riziká ktoré môžu nastať pri vedení automobilu alebo aj pri automobile ktorý nie je práve v pohybe. V nasledujúcej sekcii~\ref{predstavenie} si predstavíme softvéry a pomocné komponenty ktoré majú za úlohu sa s týmito situáciami vysporiadať a urobíme ich podrobný rozbor. Veľa z týchto komponentov ešte momentalne nie je implementovaných v bežných automobiloch ale vývojári sa ich snažia dokončiť čo najrýchlejšie a následne vyslať na trh. Budeme sa zaoberať vytváraním modelov daných situácií a ukážeme si ich priebeh od začiatku až do konca. V tejto práci nebudem poukazovať len na výhody týchto softvérov a zariadení, ale budem uvádzať aj nevýhody a ich potencionálne odstránenie. Rozbor jednotlivých softvérov a komponentov bude obohatený o rôzne grafy a vývojové diagramy, pre lepšie pochopenie danej problematiky. Celá práca bude zhrnutá v sekcii Záver, kde sa podelím o svoj osobný názor a urobím jej kompletný výstup.
+Zameranie tejto práce je pomerne široké, preto bude pozostávať s viacerych sekcií. Hneď v sekcii~\ref{problematika} si predstavíme riziká ktoré môžu nastať pri vedení automobilu alebo aj pri automobile ktorý nie je práve v pohybe. V nasledujúcej sekcii~\ref{predstavenie} si predstavíme softvéry a pomocné komponenty ktoré majú za úlohu sa s týmito situáciami vysporiadať a urobíme ich podrobný rozbor. Veľa z týchto komponentov ešte momentalne nie je implementovaných v bežných automobiloch ale vývojári sa ich snažia dokončiť čo najrýchlejšie a následne vyslať na trh. Budeme sa zaoberať vytváraním modelov daných situácií a ukážeme si ich priebeh od začiatku až do konca. V tejto práci nebudem poukazovať len na výhody týchto softvérov a zariadení, ale budem uvádzať aj nevýhody a ich potencionálne odstránenie. Rozbor jednotlivých softvérov a komponentov bude obohatený o rôzne grafy a vývojové diagramy, pre lepšie pochopenie danej problematiky. Celá práca bude zhrnutá v sekcii~\ref{zaver}, kde sa podelím o svoj osobný názor a urobím jej kompletný výstup.
 
 
 
 \section{Problematika} \label{problematika}
 
-Z obr.~\ref{f:rozhod} je všetko jasné. 
-
-\begin{figure*}[tbh]
-\centering
-%\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
-\end{figure*}
+Pokroky v automobilovom priemysle sú veľmi citeľné a s dostupnosťou moderných technológií napredujú bleskovou rýchlosťou. Ako príklad nám slúži autopilot, ktorý bol prvotne implementovaný v autách značky Tesla a momentálne už máme na trhu veľké množstvo automobilových firiem ktoré taktiež implementovali túto funkcionalitu do svojich áut. Autopilot ako taký, je pomerne nová funkcionalita a preto s jeho nástupom prišli aj situácie v ktorých nezareagoval adekvátne alebo aj vôbec a tým pádom spôsobil závažné nehody. Zoberme si ako príklad rok 2018\cite{main}, kedy autopilotom vedené vozidlo značky Uber zrazilo chodca a spôsobilo mu vážnejšie zranenia. Aj napriek rozvoju autopilota, sme sa ešte nedostali do takej fázy aby bol rozšírený do väčšiny áut, najmä kvôli jeho cenovej dostupnosti, a preto drvivá väčšina obyvateľstva riadi svoje auto manuálne. Tu zasa prichádzajú ďaľšie faktory ako napríklad fyzický a psychický stav vodiča a posádky auta, ktoré môžu náhle zmeniť pokojnú situáciu vedenia vozidla na kritickú. Ide napríklad o náhlu zmenu zdravotného stavu šoféra, kedy stráca kontrolu nad vozidlom a ohrozuje tým svoju posádku a taktiež aaj vonkajšie okolie. Aby sa stihlo včas zabrániť takýmto situáciam, firmy prichádzajú s rôznymi softvérmi a komponentami ktorých funkcia je detekovať, vyhodnotiť a vyriešiť danú rizikovú situáciu.
 
 
 
 \section{Predstavenie softvérov a komponentov} \label{predstavenie}
 
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+V predchádzajúcej sekcii~\ref{problematika} sme boli oboznámení s rizikovými sutiáciami ktoré môžu nastať. V tejto sekcii si predstavíme rôzne softvéry a komponenty ktoré majú týmto situáciam zabrániť. Tieto komponenty sú strategicky osadené vo výhodných pozíciach automobilu aby dokázali pracovať bez akéhokoľvek obmedzenia.
 
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
-
-
-\subsection{Nejaké vysvetlenie} \label{ina:nejake}
+\subsection{Audi FitDriver} \label{predstavenie:audi}
 
 Niekedy treba uviesť zoznam:
 
@@ -90,14 +79,16 @@ Ten istý zoznam, len číslovaný:
 \end{enumerate}
 
 
-\subsection{Ešte nejaké vysvetlenie} \label{ina:este}
+\subsection{Pasenger monitoring using AI radar} \label{predstavenie:radar}
+
+\subsection{Hearth rate monitoring system} \label{predstavenie:hearth}
 
 \paragraph{Veľmi dôležitá poznámka.}
 Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
 
 
 
-\section{Dôležitá časť} \label{dolezita}
+\section{Modelovanie situácií} \label{modelovanie}
 
 
 
@@ -115,6 +106,7 @@ Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom
 
 
 % týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
-\bibliography{bibliografia}
+
 \bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliography{bibliografia.bib}
 \end{document}

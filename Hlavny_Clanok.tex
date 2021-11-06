@@ -2,21 +2,21 @@
 
 \documentclass[10pt,twoside,slovak,a4paper]{article}
 
+\usepackage{float}
 \usepackage[slovak]{babel}
-%\usepackage[T1]{fontenc}
-\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
+\usepackage[IL2]{fontenc} 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-\usepackage{url} % príkaz \url na formátovanie URL
-\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\usepackage{url} 
+\usepackage{hyperref} 
 
 \usepackage{cite}
-%\usepackage{times}
+\usepackage{times}
 
 %\pagestyle{headings}
 
 \title{Softvéry na detekciu potencionálnych rizík 
-implementované v automobiloch\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: PhD. Ing. Fedor Lehocki  }} % meno a priezvisko vyučujúceho na cvičeniach
+implementované v automobiloch\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: PhD. Ing. Fedor Lehocki  }} 
 
 \author{Michal Januška\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
@@ -24,7 +24,7 @@ implementované v automobiloch\thanks{Semestrálny projekt v predmete Metódy in
 	{\small \texttt{xjanuskam@stuba.sk}}
 	}
 
-\date{\small 5.10. 2021} % upravte
+\date{\small 5.10. 2021}
 
 
 
@@ -40,13 +40,13 @@ implementované v automobiloch\thanks{Semestrálny projekt v predmete Metódy in
 
 \section{Úvod}\label{uvod}
 
-Zameranie tejto práce je pomerne široké, preto bude pozostávať s viacerych sekcií. Hneď v sekcii~\ref{problematika} si predstavíme riziká ktoré môžu nastať pri vedení automobilu alebo aj pri automobile ktorý nie je práve v pohybe. V nasledujúcej sekcii~\ref{predstavenie} si predstavíme softvéry a pomocné komponenty ktoré majú za úlohu sa s týmito situáciami vysporiadať a urobíme ich podrobný rozbor. Veľa z týchto komponentov ešte momentalne nie je implementovaných v bežných automobiloch ale vývojári sa ich snažia dokončiť čo najrýchlejšie a následne vyslať na trh. Budeme sa zaoberať vytváraním modelov daných situácií a ukážeme si ich priebeh od začiatku až do konca. V tejto práci nebudem poukazovať len na výhody týchto softvérov a zariadení, ale budem uvádzať aj nevýhody a ich potencionálne odstránenie. Rozbor jednotlivých softvérov a komponentov bude obohatený o rôzne grafy a vývojové diagramy, pre lepšie pochopenie danej problematiky. Celá práca bude zhrnutá v sekcii~\ref{zaver}, kde sa podelím o svoj osobný názor a urobím jej kompletný výstup.
+Zameranie tejto práce je pomerne široké, preto sa ho budem snažiť interpretovať čo najjednoduchšie a najstručnejšie. Hneď v sekcii~\ref{problematika} si predstavíme riziká ktoré môžu nastať pri vedení automobilu alebo aj pri automobile ktorý nie je práve v pohybe. V nasledujúcej sekcii~\ref{predstavenie} si predstavíme softvéry a pomocné komponenty ktoré majú za úlohu sa s týmito situáciami vysporiadať a urobíme ich podrobný rozbor. Niektoré z týchto komponentov ešte momentálne nie je implementovaných v bežných automobiloch, ale vývojári sa ich snažia dokončiť čo najrýchlejšie a následne vyslať na trh. Budeme sa zaoberať vytváraním modelov daných situácií a ukážeme si ich priebeh od začiatku až do konca. V tejto práci nebudem poukazovať len na výhody týchto softvérov a zariadení, ale budem uvádzať aj nevýhody a ich potencionálne odstránenie. Rozbor jednotlivých softvérov a komponentov bude obohatený o rôzne grafy a vývojové diagramy, pre lepšie pochopenie danej problematiky. Celá práca bude zhrnutá v sekcii~\ref{zaver}, kde sa podelím o svoj osobný názor a urobím jej kompletný výstup.
 
 
 
 \section{Problematika} \label{problematika}
 
-Pokroky v automobilovom priemysle sú veľmi citeľné a s dostupnosťou moderných technológií napredujú bleskovou rýchlosťou. Ako príklad nám slúži autopilot, ktorý bol prvotne implementovaný v autách značky Tesla a momentálne už máme na trhu veľké množstvo automobilových firiem ktoré taktiež implementovali túto funkcionalitu do svojich áut. Autopilot ako taký, je pomerne nová funkcionalita a preto s jeho nástupom prišli aj situácie v ktorých nezareagoval adekvátne alebo aj vôbec a tým pádom spôsobil závažné nehody. Zoberme si ako príklad rok 2018\cite{main}, kedy autopilotom vedené vozidlo značky Uber zrazilo chodca a spôsobilo mu vážnejšie zranenia. Aj napriek rozvoju autopilota, sme sa ešte nedostali do takej fázy aby bol rozšírený do väčšiny áut, najmä kvôli jeho cenovej dostupnosti, a preto drvivá väčšina obyvateľstva riadi svoje auto manuálne. Tu zasa prichádzajú ďaľšie faktory ako napríklad fyzický a psychický stav vodiča a posádky auta, ktoré môžu náhle zmeniť pokojnú situáciu vedenia vozidla na kritickú. Ide napríklad o náhlu zmenu zdravotného stavu šoféra, kedy stráca kontrolu nad vozidlom a ohrozuje tým svoju posádku a taktiež aaj vonkajšie okolie. Aby sa stihlo včas zabrániť takýmto situáciam, firmy prichádzajú s rôznymi softvérmi a komponentami ktorých funkcia je detekovať, vyhodnotiť a vyriešiť danú rizikovú situáciu.
+Pokroky v automobilovom priemysle sú veľmi citeľné a s dostupnosťou moderných technológií napredujú bleskovou rýchlosťou. Ako príklad nám slúži autopilot, ktorý bol prvotne implementovaný v autách značky Tesla a momentálne už máme na trhu veľké množstvo automobilových firiem ktoré taktiež implementovali túto funkcionalitu do svojich áut. Autopilot ako taký, je pomerne nová funkcionalita a preto s jeho nástupom prišli aj situácie v ktorých nezareagoval adekvátne alebo aj vôbec a tým pádom spôsobil závažné nehody. Zoberme si ako príklad rok 2018\cite{main}, kedy autopilotom vedené vozidlo značky Uber zrazilo chodca a spôsobilo mu vážnejšie zranenia. Aj napriek rozvoju autopilota, sme sa ešte nedostali do takej fázy aby bol rozšírený do väčšiny áut, najmä kvôli jeho cenovej dostupnosti, a preto drvivá väčšina obyvateľstva riadi svoje auto manuálne. Tu zasa prichádzajú ďaľšie faktory ako napríklad fyzický a psychický stav vodiča a posádky auta, ktoré môžu náhle zmeniť pokojnú situáciu vedenia vozidla na kritickú. Ide napríklad o náhlu zmenu zdravotného stavu šoféra, kedy stráca kontrolu nad vozidlom a ohrozuje tým svoju posádku a taktiež aj vonkajšie okolie. Aby sa stihlo včas zabrániť takýmto situáciam, firmy prichádzajú s rôznymi softvérmi a komponentami ktorých funkcia je detekovať, vyhodnotiť a vyriešiť danú rizikovú situáciu.
 
 
 
@@ -56,37 +56,44 @@ V predchádzajúcej sekcii~\ref{problematika} sme boli oboznámení s rizikovým
 
 \subsection{Audi Fit Driver\cite{main}} \label{predstavenie:audi}
 
-Audi Fit Driver je koncept od spoločnosti Audi, ktorý má za pomoci získaných informácií o fyzickom a psychickom stave vodiča ale taktiež aj stave vonkajšieho prostredia, ako napríklad stav počasia alebo hustota dopravy, upraviť prostredie automobilu tak, aby sa znížila pravdepodobnosť vzniku nejkého rizika. Ak je zdravotný stav vodiča natoľko zlý, že stráca kontrolu nad vozidlom, aktivujú sa softvéry ktoré dokážu zavolať vodičovi záchranku ale taktiež bezpečne dopraviť automobil na najbližšie stojisko. Za zber týchto informácií zodpovedajú napríklad hodinky alebo náramok, ktorý komunikuje s vonkajšími servermi ale taktiež aj so softvérmi zabudovanými priamo v automobile. Ak je napríklad zaznamenaná zvýšená hladina stresu, ktorá sa môže preukázať zvýšeným pulzom šoféra, Audi Fit Driver napríklad upraví hlasitosť a štýl hudby ktorú vodič počúva, alebo v prípade hustej dopravy ponúkne alternatívnu, menej stresujúcu trasu.
+Audi Fit Driver je projekt od spoločnosti Audi, ktorý má za pomoci získaných informácií o fyzickom a psychickom stave vodiča, ale taktiež aj stave vonkajšieho prostredia, ako napríklad stav počasia alebo hustota dopravy, upraviť prostredie automobilu tak, aby sa znížila pravdepodobnosť vzniku nejkého rizika. Ak je zdravotný stav vodiča natoľko zlý, že stráca kontrolu nad vozidlom, aktivujú sa softvéry ktoré dokážu zavolať vodičovi záchranku ale taktiež bezpečne dopraviť automobil na najbližšie stojisko. Za zber týchto informácií zodpovedajú napríklad hodinky alebo náramok, ktorý komunikuje s vonkajšími servermi ale taktiež aj so softvérmi zabudovanými priamo v automobile. Ak je napríklad zaznamenaná zvýšená hladina stresu, ktorá sa môže preukázať zvýšeným pulzom šoféra, Audi Fit Driver môže upraviť hlasitosť a štýl hudby ktorú vodič počúva, alebo v prípade hustej dopravy ponúkne alternatívnu, menej stresujúcu trasu.
 
+\begin {figure} [H]
+\includegraphics[scale=0.5]{audi_fit_driver} 
+\caption{Model funkcionality komponentov Audi Fit Driver\cite{main}}
+\label{fig1}
+\end {figure}
 
-\subsection{Pasenger monitoring using AI radar} \label{predstavenie:radar}
+Na obrázku ~\ref{fig1} môžeme jasne vidieť, ako prebieha monitorovanie pasažiera v reálnom čase. Môžeme pozorovať, že riešenie danej situácie vyplýva z jej závažnosti. Napriek tomu, že tento projekt vyzerá byť veľmi dobre navrhnutý, sú tu isté faktory ktoré, by mohli viesť k jeho zlyhaniu. Jedným z nich je napríklad výdrž batérie hodiniek, ktorá môže mať za výsledok pozastavenie výmeny informácií medzi servermi a samotným automobilom a preto v prípade rizikovej situácie, nemusia byť softvéry na jej riešenie plne dostupné. Tento problém by sa dal potencionálne odstrániť jednoduchým warningom, ktorý by upozornil vodiča aby si dané zariadenie čo najskôr dobil, aby bolo plne funkčné v prípade rizikových situácií.
 
-\subsection{Hearth rate monitoring system} \label{predstavenie:hearth}
+\subsection{Pasenger monitoring using AI radar\cite{monitoring}} \label{predstavenie:radar}
 
-\paragraph{Veľmi dôležitá poznámka.}
-Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
+Pasenger monitoring system je veľmi dôležitým softvérom, ktorý má za úlohu rozpoznávať živé objekty a ich počet v automobile. Na prvý pohľad sa nám môže zdať zámer tohto softvéru nejasný, no zoberme si veľmi častú situáciu ktorá nastáva najmä v letných mesiacoch. Podľa skupiny Kids and Cars prišlo v automobiloch od roku 1990 až po súčastnosť o život skoro 1000 detí na následky prehriatia organizmu alebo naopak umrznutia. A to nehovoriac ešte o nespočetnom množstve domácich zvierat. Ľudom sa často stáva že v rýchlom okamihu zabudnú svoje dieťa alebo domáce zviera v aute a niekedy stačí naozaj chvíľa a už je neskoro na ich záchranu. Toto je dôvod prečo bol navrhnutý Passenger monitoring system. Budem sa zaoberať druhom systému, ktorý na túto detekciu využíva radar umelej inteligencie. Prečo práve radar? Odpoveď je jasná. Radar na rozdieľ od ultrazvukových senzorov nestráca výkonnosť pri prechode viacerými materiálmi, tým pádom môže byť umiestnený kdekoľvek v automobile a stále mať 100\% výsledok pri zbere dát. Ďalšou možnosťou je aj kamerový systém ktorý by na základe pohybu dokázal zbierať potrebné údaje. Táto možnosť je síce lákavá, ale jej nevýhodou je narúšanie súkromia vlastníka automobilu.
 
+\subsubsection{Presence-Absence Detection Algorithm (PAD)} \label{predstavenie:radar:pad}
 
+Toto je algoritmus bol implementovaný do radaru umelej inteligencie na detekciu živých organizmov v automobiloch. Spočíva na báze machine-learningu a výsledky ktoré prináša musia byť 100\%-tné, pretože akákoľvek malá chyba môže pripraviť niekoho alebo niečo o život. Tento algoritmus nemá za úlohu zisťovať pozíciu a druh organizmov, ale iba rozlíšiť či sa v automobile nachádza živý organizmus. Rozlišuje to na základe najväčšieho rozdielu medzi živým organizom a neživými vecami, dýchacích cyklov. Ak sú niekde v automobile zaznamenané dýchacie cykly, algoritmus okamžite vyšle signál o prítomnosti živého organizmu. Tento algoritmus bol testovaný pri 65 rôznych scenároch a každý z nich trval v priemere viac ako 3 minúty. Radarom bolo zozbieraných okolo 300 minút čistých dát, ktoré algoritmus prešiel a vyhodnotil všetky bez jedinej chyby.
 
+\subsubsection{Passenger Counting Algorithm} \label{predstavenie:radar:pca}
+
+PCA je ďalším algoritmom implementovaným v danom radare ktorý má za úlohu detekovať počet a rozmiestnenie osôb v automobile. Počas testovania bolo zozbieraných 192 minút dát pri 32 možných situáciach. Pri týchto testoch boli použité 3 machine learning algoritmy. Sú to Random Forest (RF), K-Nearest Neighbors (KNN) a Support Vector Machine (SVM). Každý z nich prechádzal zozbieranými dátami a na grafe môžeme vidieť ich konečnú presnosť. A môžeme s istotou povedať, že algoritmus Support Vector Machine priniesol najlepšie výsledky.
+
+\begin {figure} [H]
+\includegraphics[scale=0.5]{accuracy} 
+\caption{Graf vyobrazujúci presnosť algoritmov pre rôzne sedadlá\cite{monitoring}}
+\label{fig1}
+\end {figure}
+
+\subsection{Hearth rate monitoring system\cite{hearth}} \label{predstavenie:hearth}
+%V tejto sekcii sa este planujem venovat dalsiemu softveru na detekciu potencionalnych rizik
+\subsection{Healthcare Monitoring System Inside Self-driving Smart Car in 5G Cellular Network\cite{5g}}\label{predstavenie:5g}
+%V tejto sekcii sa este planujem venovat dalsiemu softveru na detekciu potencionalnych rizik
 \section{Modelovanie situácií} \label{modelovanie}
+%V tejto sekcii chcem poukazat na modely roznych situacii zachytene softvermy a ich postup pomocou vyvojovych diagramov
 
 
-
-
-\section{Ešte dôležitejšia časť} \label{dolezitejsia}
-
-
-
-
-\section{Záver} \label{zaver} % prípadne iný variant názvu
-
-
-
-%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
-
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
-
-\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\section{Záver} \label{zaver} 
+%Zhrnutie celeho projektu a moj osobny pohlad na problematiku
+\bibliographystyle{plain}
 \bibliography{bibliografia.bib}
 \end{document}

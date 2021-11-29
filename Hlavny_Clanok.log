@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  6 NOV 2021 17:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.11.6)  8 NOV 2021 15:56
 entering extended mode
 **./Hlavny_Clanok.tex
 (Hlavny_Clanok.tex
@@ -249,7 +249,7 @@ Package: cite 2015/02/27  v 5.5
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
 )
 LaTeX Font Info:    Trying to load font information for IL2+ptm on input line 3
-1.
+0.
 
 (C:\Users\micha\AppData\Local\Programs\MiKTeX\tex/cslatex/cspsfonts\il2ptm.fd
 File: il2ptm.fd 1998/01/31 CS Times
@@ -263,29 +263,33 @@ tex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count270
 \l__pdf_internal_box=\box52
-) (Hlavny_Clanok.aux)
+) (Hlavny_Clanok.aux
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+)
 \openout1 = `Hlavny_Clanok.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for IL2/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 (C:\Users\micha\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -312,7 +316,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (C:\Users\micha\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -326,29 +330,29 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count277
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
  (Hlavny_Clanok.out) (Hlavny_Clanok.out)
 \@outlinefile=\write3
 \openout3 = `Hlavny_Clanok.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 34.
+(Font)              <17.28> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 34.
+(Font)              <12> on input line 33.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-4.
+3.
 
 (C:\Users\micha\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 34.
+(Font)              <8> on input line 33.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 34.
+(Font)              <6> on input line 33.
 LaTeX Font Info:    Trying to load font information for IL2+pcr on input line 3
-4.
+3.
 
 (C:\Users\micha\AppData\Local\Programs\MiKTeX\tex/cslatex/cspsfonts\il2pcr.fd
 File: il2pcr.fd 1998/01/31 CS Courier
@@ -358,64 +362,82 @@ LaTeX Font Info:    Created by CsPsFont utility v.1.0e (C) Z. Wagner, 1998/01/3
 1 on input line 4.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 34.
+(Font)              <5> on input line 33.
 
 [1
 
 {C:/Users/micha/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 57.
+(hyperref)                removing `\@ifnextchar' on input line 56.
 
-<audi_fit_driver.jpg, id=54, 578.16pt x 409.0482pt>
+<audi_fit_driver.jpg, id=62, 578.16pt x 409.0482pt>
 File: audi_fit_driver.jpg Graphic file (type jpg)
 <use audi_fit_driver.jpg>
-Package pdftex.def Info: audi_fit_driver.jpg  used on input line 62.
+Package pdftex.def Info: audi_fit_driver.jpg  used on input line 61.
 (pdftex.def)             Requested size: 289.07928pt x 204.52359pt.
+[2]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
-
-LaTeX Warning: Citation `monitoring' on page 3 undefined on input line 69.
+LaTeX Warning: Citation `monitoring' on page 3 undefined on input line 68.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 69.
+(hyperref)                removing `\@ifnextchar' on input line 68.
+
+[3 <./audi_fit_driver.jpg>]
+<accuracy.png, id=76, 767.11594pt x 460.72125pt>
+File: accuracy.png Graphic file (type png)
+<use accuracy.png>
+Package pdftex.def Info: accuracy.png  used on input line 81.
+(pdftex.def)             Requested size: 383.55702pt x 230.36006pt.
+
+Overfull \hbox (38.55702pt too wide) in paragraph at lines 81--82
+[][] 
+ []
 
 
-LaTeX Warning: Citation `hearth' on page 3 undefined on input line 73.
+LaTeX Warning: Citation `monitoring' on page 4 undefined on input line 82.
+
+
+LaTeX Warning: Citation `hearth' on page 4 undefined on input line 86.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 73.
+(hyperref)                removing `\@ifnextchar' on input line 86.
 
-(Hlavny_Clanok.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./audi_fit_driver.jpg>]) [4] (Hlavny_Clanok.aux)
+LaTeX Warning: Citation `5g' on page 4 undefined on input line 89.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 89.
+
+(Hlavny_Clanok.bbl [4 <./accuracy.png>]) [5] (Hlavny_Clanok.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Hlavny_Clanok.out' has not changed.
-(rerunfilecheck)             Checksum: 41F8EB713EB62F9D97E4C4F048A70D51;1492.
+(rerunfilecheck)             Checksum: 74703711EDD3EC931EC007D31677C5E7;2324.
  ) 
 Here is how much of TeX's memory you used:
- 9586 strings out of 478927
- 145806 string characters out of 2852535
- 462987 words of memory out of 3000000
- 27279 multiletter control sequences out of 15000+600000
+ 9604 strings out of 478927
+ 146126 string characters out of 2852535
+ 464238 words of memory out of 3000000
+ 27294 multiletter control sequences out of 15000+600000
  419513 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,7n,66p,1502b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,7n,66p,1502b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/micha/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8a.enc}{C:
 /Users/micha/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/User
 s/micha/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Us
 ers/micha/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Us
 ers/micha/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Hlavny_Clanok.pdf (4 pages, 277476 bytes).
+Output written on Hlavny_Clanok.pdf (5 pages, 587921 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 99 words of extra memory for PDF output out of 10000 (max. 10000000)
 
